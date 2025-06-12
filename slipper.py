@@ -13,12 +13,14 @@ class SlipperArguments:
         self.parser.add_argument('-p', '--payload', action='append', nargs=2,
                                  metavar=('filename', 'contents'),
                                  help='add filename with contents to archive')
-        self.parser.add_argument('-z', '--zip_filename', default=None,
+        group = self.parser.add_mutually_exclusive_group(required=True)
+
+        group.add_argument('-z', '--zip_filename', default=None,
                                  help='create a zip with given name')
-        self.parser.add_argument('-t', '--tar_filename', default=None,
+        group.add_argument('-t', '--tar_filename', default=None,
                                  help='create a tar with given name')
         self.parser.add_argument('-i', '--input_filename', default=None,
-                                 help='create a tar with given name')
+                                 help='create a zip or tar with the given archive as a starting point')
 
     def parse_arguments(self, args):
         return self.parser.parse_args(args)

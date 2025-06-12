@@ -5,17 +5,30 @@ Build zip and tar slip payloads (directory traversals for file writes). Details 
 
 
 ```
-usage: slipper.py [-h] [-p filename contents] [-z ZIP_FILENAME]
-                  [-t TAR_FILENAME]
 
-optional arguments:
-  -h, --help            show this help message and exit
+usage: slipper.py [-h]
+                  [-p filename contents]
+                  (-z ZIP_FILENAME | -t TAR_FILENAME)
+                  [-i INPUT_FILENAME]
+
+options:
+  -h, --help         show this help
+                     message and exit
   -p filename contents, --payload filename contents
-                        add filename with contents to archive
+                     add filename with
+                     contents to archive
   -z ZIP_FILENAME, --zip_filename ZIP_FILENAME
-                        create a zip with given name
+                     create a zip with
+                     given name
   -t TAR_FILENAME, --tar_filename TAR_FILENAME
-                        create a tar with given name
+                     create a tar with
+                     given name
+  -i INPUT_FILENAME, --input_filename INPUT_FILENAME
+                     create a zip or tar
+                     with the given
+                     archive as a
+                     starting point
+
 ```
 
 Note that `-p` can be repeated to add multiple `filename, content` pairs to each archive type.
