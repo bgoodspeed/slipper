@@ -1,5 +1,5 @@
 
-# Tool to build zip and tar slip payloads 
+# Slipper - a tool to build zip and tar slip payloads 
 
 Build zip and tar slip payloads (directory traversals for file writes). Details in the [snyk github](https://github.com/snyk/zip-slip-vulnerability) for known vulnerable items.
 
